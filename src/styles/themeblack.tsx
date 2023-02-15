@@ -1,11 +1,11 @@
-import React from "react";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
   colors: {
     background: '#0a0604',
     primary: '#E1DEE3',
-    secoundary: '#B9314F'
+    secoundary: '#B9314F',
+    third: '#19647e'
   },
   fonts: {
     PressStart2P: '"Press Start 2P", cursive',
