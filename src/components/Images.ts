@@ -10,7 +10,7 @@ import Plum from '../assets/img/9.png'
 import Dragonfruit from '../assets/img/10.png'
 
 
-export const test6 = [
+export const field6 = [
     {
         picture: Strawberry,
         value: "1"
@@ -37,9 +37,84 @@ export const test6 = [
     },
 ]
 
+export const field8 = [
+    {
+        picture: Strawberry,
+        value: "1"
+    },
+    {
+        picture: Cherry,
+        value: "2"
+    },
+    {
+        picture: Apple,
+        value: "3"
+    },
+    {
+        picture: Lemon,
+        value: "4"
+    },
+    {
+        picture: Banana,
+        value: "5"
+    },
+    {
+        picture: Watermelon,
+        value: "6"
+    },
+    {
+        picture: Kiwi,
+        value: "7"
+    },
+    {
+        picture: Blackberry,
+        value: "8"
+    },
+]
+
+export const field10 = [
+    {
+        picture: Strawberry,
+        value: "1"
+    },
+    {
+        picture: Cherry,
+        value: "2"
+    },
+    {
+        picture: Apple,
+        value: "3"
+    },
+    {
+        picture: Lemon,
+        value: "4"
+    },
+    {
+        picture: Banana,
+        value: "5"
+    },
+    {
+        picture: Watermelon,
+        value: "6"
+    },
+    {
+        picture: Kiwi,
+        value: "7"
+    },
+    {
+        picture: Blackberry,
+        value: "8"
+    },
+    {
+        picture: Plum,
+        value: "9"
+    },
+    {
+        picture: Dragonfruit,
+        value: "10"
+    },
+]
 
 
 
 
-export const Images8 = [Strawberry, Cherry, Apple, Lemon, Banana, Watermelon, Kiwi, Blackberry]
-export const Images10 = [Strawberry, Cherry, Apple, Lemon, Banana, Watermelon, Kiwi, Blackberry, Plum, Dragonfruit]
