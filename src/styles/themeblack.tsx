@@ -19,8 +19,6 @@ const theme = {
   }
 };
 
-
-
 const Theme = ({ children }: any) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );

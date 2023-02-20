@@ -4,7 +4,11 @@ import DefaultPicture6 from '../assets/img/defaultPicture6.png'
 import DefaultPicture8 from '../assets/img/defaultPicture8.png'
 import DefaultPicture10 from '../assets/img/defaultPicture10.png'
 import Footer from "../components/Footer"
-
+import { Link } from "react-router-dom"
+import { ImArrowLeft2 } from "react-icons/im"
+import GameField6 from "../components/gameFields/GameField6"
+import GameField8 from "../components/gameFields/GameField8"
+import GameField10 from "../components/gameFields/GameField10"
 
 export const GameMainContainer = styled.div`
   align-items: center;
@@ -14,6 +18,15 @@ export const GameMainContainer = styled.div`
   min-height: 100vh;
   justify-content: space-between;
   width: 100%;
+  & a {
+    color: ${({ theme: { colors } }) => colors.primary};
+    font-family: ${({ theme: { fonts } }) => fonts.PressStart2P};
+    font-size: ${({ theme: { fontSize } }) => fontSize.mid};
+    text-decoration: none;
+    &:hover {
+      color: ${({ theme: { colors } }) => colors.secoundary};
+    }
+  }
 `
 
 export const GameHeader = styled.header`
@@ -62,9 +75,11 @@ export const GameChooseLevel = styled.section`
     }
     & input:checked~label {
       border: 2px solid white;
+      color: ${({ theme: { colors } }) => colors.secoundary};
       padding: 5px;
     }
     & label {
+      cursor: pointer;
     }
   }
   & button {
@@ -76,7 +91,10 @@ export const GameChooseLevel = styled.section`
     font-size: ${({ theme: { fontSize } }) => fontSize.mid};
     margin: 20px 0;
     padding: 8px 10px;
+    &:hover {
+      background-color: ${({ theme: { colors } }) => colors.secoundary};
     }
+  }
 `
 
 export const GameCards = styled.div`
@@ -92,13 +110,38 @@ export const DefaultField = styled.div`
 
 export default function Game() {
 
-  const [levelValue, setLevelValue] = useState(10)
+const [gameChooseLevelDisplay, setGameChooseLevelDisplay] = useState(true)
+const [levelValue, setLevelValue] = useState(0)
+const [defaulFieldDisplay, setDefaultFieldDiplay] = useState(true)
+
+const displayGameField = () => {
+  if(levelValue === 6) {
+    return <GameField6 />
+  }
+
+  if(levelValue === 8) {
+    return <GameField8 />
+  }
+
+  if(levelValue === 10) {
+    return <GameField10 />
+  }
+}
+
+const startGame = () => {
+  if(levelValue !== 0) {
+    setDefaultFieldDiplay(false)
+    setGameChooseLevelDisplay(false)
+  }
+}
 
   return (
     <GameMainContainer>
       <GameHeader><h1>MemoryGame</h1></GameHeader>
       <GameWindow>
-        <GameChooseLevel>
+        {gameChooseLevelDisplay ? 
+        (
+          <GameChooseLevel>
           <label>Choose level :</label>
           <div className='inputsContainer'>
             <div>
@@ -132,17 +175,23 @@ export default function Game() {
               <label htmlFor='gameLevel_3'>10 symbols</label>
             </div>
           </div>
-          <button>START</button>
+          <button onClick={startGame}>
+            START
+            </button>
         </GameChooseLevel>
+        ) : null}
         <GameCards>
-
-          <DefaultField>
-          {levelValue !== 6 ? null : <img src={DefaultPicture6} alt="defaultPicture6" /> }
-          {levelValue !== 8 ? null : <img src={DefaultPicture8} alt="defaultPicture8" />}
-          {levelValue !== 10 ? null : <img src={DefaultPicture10} alt="defaultPicture10" />}
-          </DefaultField>
+          {defaulFieldDisplay ? 
+          ( <DefaultField>
+            {levelValue !== 6 ? null : <img src={DefaultPicture6} alt="defaultPicture6" />}
+            {levelValue !== 8 ? null : <img src={DefaultPicture8} alt="defaultPicture8" />}
+            {levelValue !== 10 ? null : <img src={DefaultPicture10} alt="defaultPicture10" />}
+            {levelValue !== 0 ? null : <img src={DefaultPicture10} alt="defaultPicture10" />}
+          </DefaultField> ) : 
+          displayGameField()}
         </GameCards>
       </GameWindow>
+      <Link to='/'>{<ImArrowLeft2/>} Back</Link>
       <Footer />
     </GameMainContainer>
   )
