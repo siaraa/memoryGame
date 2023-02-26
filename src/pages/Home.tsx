@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
 export const HomeMainContainer = styled.div`
-    align-items: center;
+    /* align-items: center; */
     background-color: ${({ theme: { colors } }) => colors.background};
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
     height: 100vh;
-    justify-content: space-between;
+    max-height: 100vh;
+    /* justify-content: space-between; */
     position: relative;
     width: 100%;
 `
@@ -22,7 +25,7 @@ export const HomeHeader = styled.header`
     & h1 {
         color: ${({ theme: { colors } }) => colors.primary};
         font-family: ${({ theme: { fonts } }) => fonts.PressStart2P};
-        font-size: clamp(1em, 8vw, 180px);
+        font-size: clamp(28px, 8vw, 180px);
     }
 `
 
@@ -30,16 +33,13 @@ export const HomeMainContent = styled.section`
     align-content: center;
     display: flex;
     justify-content: center;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
     width: 100%;
 `
 
 export const HomeMenu = styled.div`
     border: 2px solid ${({ theme: { colors } }) => colors.primary};
     font-size: ${({ theme: { fontSize } }) => fontSize.mid};
+    height: min-content;
     padding: 20px;
     width: max-content;
     & ul {
@@ -49,9 +49,6 @@ export const HomeMenu = styled.div`
             font-size: clamp(.5em, 2vw, 28px);
             margin: 12px 0;
             padding: 10px 0;
-            &:last-of-type {
-                margin-top: 24px;
-            }
             & label {
                 color: ${({ theme: { colors } }) => colors.third}; 
                 display: block;
@@ -66,7 +63,7 @@ export const HomeMenu = styled.div`
                     border: 2px solid ${({ theme: { colors } }) => colors.third};
                     left: 0;
                     position: absolute;
-                    width: 100%;
+                    width: 75.5%;
                 }
             }
             & a {
@@ -77,11 +74,6 @@ export const HomeMenu = styled.div`
         & li:hover {
             & a {
                 color: ${({ theme: { colors } }) => colors.secoundary};
-            }
-            &:last-of-type {
-                & a {
-                color: ${({ theme: { colors } }) => colors.third};
-                } 
             }
         }
     }

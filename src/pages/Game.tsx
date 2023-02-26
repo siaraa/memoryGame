@@ -22,7 +22,11 @@ export const GameMainContainer = styled.div`
     color: ${({ theme: { colors } }) => colors.primary};
     font-family: ${({ theme: { fonts } }) => fonts.PressStart2P};
     font-size: ${({ theme: { fontSize } }) => fontSize.mid};
+    margin-top: 10px;
     text-decoration: none;
+    @media (max-width: 500px) {
+      font-size: ${({ theme: { fontSize } }) => fontSize.small};
+    }
     &:hover {
       color: ${({ theme: { colors } }) => colors.secoundary};
     }
@@ -38,12 +42,13 @@ export const GameHeader = styled.header`
     & h1 {
         color: ${({ theme: { colors } }) => colors.primary};
         font-family: ${({ theme: { fonts } }) => fonts.PressStart2P};
-        font-size: clamp(1em, 5vw, 90px);
+        font-size: clamp(28px, 5vw, 90px);
     }
 `
 
 export const GameWindow = styled.section`
-  width: 80%;
+  padding: 0 20px;
+  width: 100%;
   max-width: 1000px;
 `
 
@@ -64,7 +69,9 @@ export const GameChooseLevel = styled.section`
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 500px;
     & div {
       display: flex;
       flex-direction: column;
@@ -80,6 +87,11 @@ export const GameChooseLevel = styled.section`
     }
     & label {
       cursor: pointer;
+      margin: 0 5px;
+      text-align: center;
+      @media (max-width: 500px) {
+        font-size: ${({ theme: { fontSize } }) => fontSize.small};
+      }
     }
   }
   & button {
@@ -91,6 +103,9 @@ export const GameChooseLevel = styled.section`
     font-size: ${({ theme: { fontSize } }) => fontSize.mid};
     margin: 20px 0;
     padding: 8px 10px;
+    @media (max-width: 500px) {
+        font-size: ${({ theme: { fontSize } }) => fontSize.small};
+      }
     &:hover {
       background-color: ${({ theme: { colors } }) => colors.secoundary};
     }
@@ -106,6 +121,10 @@ export const DefaultField = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  & img {
+    width: 100%;
+    max-width: 800px;
+  }
 `
 
 export default function Game() {
