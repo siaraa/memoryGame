@@ -1,6 +1,6 @@
 # memoryGame
 ## General info
-Project under construction...
+NOT FINISHED YET!
 
 ## Technologies
 * VITE 4.1.0
