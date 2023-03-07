@@ -3,15 +3,11 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
 export const HomeMainContainer = styled.div`
-    /* align-items: center; */
     background-color: ${({ theme: { colors } }) => colors.background};
-    /* display: flex;
-    flex-direction: column; */
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     height: 100vh;
     max-height: 100vh;
-    /* justify-content: space-between; */
     position: relative;
     width: 100%;
 `
@@ -90,7 +86,6 @@ export default function Home() {
                     <ul>
                         <li><label>Menu:</label></li>
                         <li><Link to='/game'>New Game</Link></li>
-                        <li><Link to='/hiscores'>HiScores</Link></li>
                         <li><Link to='https://github.com/siaraa' target='_blank'>Visite my Github</Link></li>
                     </ul>
                 </HomeMenu>

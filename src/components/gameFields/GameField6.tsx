@@ -54,14 +54,23 @@ export const FrontCard = styled.div`
 `
 
 export const WinContainer = styled.div`
-  width: 300px;
+  align-items: center;
+  background-color: ${({ theme: { colors } }) => colors.third};
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   height: 200px;
-  background-color: ${({ theme: { colors } }) => colors.primary};
+  justify-content: center;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+  width: 300px;
   z-index: 5;
+  & p {
+    color: ${({ theme: { colors } }) => colors.primary};
+    font-size: ${({ theme: { fontSize } }) => fontSize.mid};
+  }
 `
 
 export default function GameField6() {
