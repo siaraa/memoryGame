@@ -169,7 +169,7 @@ export default function GameField8() {
       {win ? 
       (<WinContainer>
       <p>YOU WIN!</p>
-      <p>czas: {gameTime}</p>
+      <p>Your time: {gameTime}</p>
     </WinContainer>) : null}
     
     </GameFieldMainContainer>
