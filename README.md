@@ -1,6 +1,7 @@
 # memoryGame
 ## General info
-NOT FINISHED YET!
+Simple Memory game. You can choose one of three levels: 6, 8 or 10 pictures pairs. 
+!!! [PLAY THE GAME](http://memorygame.siaraa.pl/) !!!
 
 ## Technologies
 * VITE 4.1.0
@@ -10,4 +11,10 @@ NOT FINISHED YET!
 * REACT-ICONS 4.7.1
 * STYLED-COMPONENTS 5.3.6
 
-!!! [PLAY THE GAME](http://memorygame.siaraa.pl/) !!!
+## Setup
+After download install npm in main directory (`npm i node-modules`). Then run in terminal: 'npm run dev' and enjoy. Have fun!
+
+## Screens
+
+
+
